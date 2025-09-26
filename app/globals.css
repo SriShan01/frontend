@@ -1,26 +1,92 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* --- Global Variables --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f9fafb;
+  --foreground: #111827;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --button-blue: #3b82f6;
+  --button-green: #10b981;
+  --input-border: #d1d5db;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- Buttons --- */
+.button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.button-blue {
+  background-color: var(--button-blue);
+}
+.button-blue:hover {
+  background-color: #2563eb;
+}
+
+.button-green {
+  background-color: var(--button-green);
+}
+.button-green:hover {
+  background-color: #059669;
+}
+
+/* --- Inputs --- */
+.input {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--input-border);
+  outline: none;
+  transition: all 0.2s ease;
+}
+.input:focus {
+  border-color: var(--button-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* --- Cards (Order Items) --- */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 6px var(--card-shadow);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+/* --- Headings --- */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* --- Lists --- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
