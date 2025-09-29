@@ -21,13 +21,13 @@ export default function Orders() {
   const [quantity, setQuantity] = useState("");
 
   const fetchOrders = async () => {
-    const res = await fetch(`http://localhost:4000/orders?search=${search}`);
+    const res = await fetch(`https://backend-production-4551.up.railway.app/orders?search=${search}`);
     const data = await res.json();
     setOrders(data);
   };
 
   const createOrder = async () => {
-    await fetch(`http://localhost:4000/orders`, {
+    await fetch(`https://backend-production-4551.up.railway.app/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
